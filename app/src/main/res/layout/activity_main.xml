@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.MainActivity">
+
+    <Button
+        android:id="@+id/insert1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="insert 1 article"
+        app:layout_constraintBottom_toTopOf="@id/insert_a_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/insert_a_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="insert a list"
+        app:layout_constraintBottom_toTopOf="@id/get1_by_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/insert1"/>
+
+
+    <Button
+        android:id="@+id/get1_by_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get article by id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/get_a_list"
+        app:layout_constraintTop_toBottomOf="@id/insert_a_list"/>
+
+
+    <Button
+        android:id="@+id/get_a_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get all articles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/get1_by_id" />
+</androidx.constraintlayout.widget.ConstraintLayout>
