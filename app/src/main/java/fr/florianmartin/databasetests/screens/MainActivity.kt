@@ -31,15 +31,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel.insertAllArticlesInDb(viewModel.articlesList)
+
+        viewModel.insertAllArticlesInDb()
 
         lifecycleScope.launch {
-            viewModel.getArticles().collect { list ->
-                list.forEach {
-                    Log.e("floooow", it.nameTest)
+            viewModel.articlesFlow.collect {
+                it.forEach { articleWithPms ->
+                    Log.e("*****", articleWithPms.toString())
                 }
             }
         }
+
+//        lifecycleScope.launch {
+//            viewModel.getArticles().collect { list ->
+//                list.forEach {
+//                    Log.e("floooow", it.nameTest)
+//                }
+//            }
+//        }
         setListeners(binding)
     }
 
@@ -55,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
             }
             getAList.setOnClickListener {
-
+                viewModel.getFullArticles()
             }
         }
     }

@@ -5,7 +5,9 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import fr.florianmartin.databasetests.data.local.entities.ArticleEntity
+import fr.florianmartin.databasetests.data.local.entities.ArticleWithPMsAndAps
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -26,6 +28,10 @@ interface ArticleDao {
     @Query("SELECT * FROM articles")
     fun getAllArticles(): Flow<List<ArticleEntity>>
 
-    @Query("SELECT * FROM articles WHERE id = :id")
-    fun getArticle(id: Int): Flow<ArticleEntity>
+    @Query("SELECT * FROM articles WHERE articleId = :id")
+    fun getArticles(id: Int): Flow<ArticleEntity>
+
+    @Transaction
+    @Query("SELECT * FROM articles")
+    fun getFullArticles(): List<ArticleWithPMsAndAps>
 }

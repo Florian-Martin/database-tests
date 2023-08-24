@@ -7,7 +7,7 @@ import fr.florianmartin.databasetests.model.Article
 @Entity(tableName = "articles")
 data class ArticleEntity(
     @PrimaryKey(true)
-    val id: Int = 0,
+    val articleId: Int = 0,
     val name: String,
     val author: String,
     val publicationDate: String
