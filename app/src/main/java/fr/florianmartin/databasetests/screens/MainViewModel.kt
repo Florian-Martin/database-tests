@@ -94,16 +94,16 @@ class MainViewModel(
         viewModelScope.launch {
             val a = articlesRepo.getArticles2()
             val b = articlesRepo.getArticles3()
-//            val c = articlesRepo.getArticles4()
+            val c = articlesRepo.getArticles4()
             a.forEach {
                 Log.e("*******A******", it.toString())
             }
             b.forEach {
                 Log.e("*******B******", it.toString())
             }
-//            c.forEach {
-//                Log.e("*******C******", it.toString())
-//            }
+            c.forEach {
+                Log.e("*******C******", it.toString())
+            }
         }
     }
 

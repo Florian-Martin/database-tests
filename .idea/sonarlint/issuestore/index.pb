@@ -11,3 +11,7 @@ Sapp/src/main/java/fr/florianmartin/databasetests/data/repositories/AppRepositor
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+q
+Aapp/src/main/java/fr/florianmartin/databasetests/model/Article.kt,6\a\6a1097695dba69cde22f4d0c0ac1553f6e3d4460
+y
+Iapp/src/main/java/fr/florianmartin/databasetests/data/local/daos/ApDao.kt,a\d\adc5eac0c94bc261b91cde01507bfa7eab66ba92

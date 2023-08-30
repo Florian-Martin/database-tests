@@ -52,6 +52,11 @@ interface ArticleDao {
     )
     suspend fun getArticles3(): List<DatabaseFetch3>
 
+    @Transaction
+    @Query("SELECT * FROM articles")
+    suspend fun getArticles4(): List<DatabaseFetch4>
+
+
 //    @Transaction
 //    @Query(
 //        "SELECT articles.articleId, articles.author, articles.name, articles.publicationDate " +
@@ -59,6 +64,7 @@ interface ArticleDao {
 //                "JOIN linked_articles ON articles.articleId = linked_articles.linked_article_id"
 //    )
 //    suspend fun getArticles4(): List<DatabaseFetch4>
+
 }
 
 
@@ -71,6 +77,17 @@ data class DatabaseFetch3(
     @ColumnInfo(name = "articleId")
     val abcd: Int,
     val apId: Int
+)
+
+data class DatabaseFetch4(
+    @Embedded
+    val article: ArticleEntity,
+
+    @Relation(
+        parentColumn = "articleId",
+        entityColumn = "article_id"
+    )
+    val linkedArticles: List<LinkedArticleEntity>
 )
 
 //data class DatabaseFetch4(
