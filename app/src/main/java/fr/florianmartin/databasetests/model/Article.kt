@@ -11,7 +11,7 @@ data class Article(
         return ArticleEntity(
             name = nameTest,
             author = author,
-            publicationDate = publicationDate
+            publicationDate = publicationDate,
         )
     }
 }

@@ -2,6 +2,8 @@ package fr.florianmartin.databasetests.data.repositories
 
 
 import fr.florianmartin.databasetests.data.local.AppDatabase
+import fr.florianmartin.databasetests.data.local.daos.DatabaseFetch2
+import fr.florianmartin.databasetests.data.local.daos.DatabaseFetch3
 import fr.florianmartin.databasetests.data.local.entities.ArticlePMsCrossRef
 import fr.florianmartin.databasetests.data.local.entities.ArticlePriceEntity
 import fr.florianmartin.databasetests.data.local.entities.ArticleWithPMsAndAps
@@ -70,5 +72,9 @@ class ArticlesRepository(database: AppDatabase) : AppRepository<Article> {
             crossRefsDao.insertAll(crossRefs)
         }
     }
+
+    suspend fun getArticles2(): List<DatabaseFetch2> = articleDao.getArticles2()
+    suspend fun getArticles3(): List<DatabaseFetch3> = articleDao.getArticles3()
+//    suspend fun getArticles4(): List<DatabaseFetch4> = articleDao.getArticles4()
 
 }

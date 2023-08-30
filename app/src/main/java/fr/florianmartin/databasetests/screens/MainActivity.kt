@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.insertAllArticlesInDb()
+//        viewModel.insertAllArticlesInDb()
 
         lifecycleScope.launch {
             viewModel.articlesFlow.collect {
@@ -42,13 +42,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-//        lifecycleScope.launch {
-//            viewModel.getArticles().collect { list ->
-//                list.forEach {
-//                    Log.e("floooow", it.nameTest)
-//                }
-//            }
-//        }
         setListeners(binding)
     }
 
@@ -61,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
             }
             get1ById.setOnClickListener {
-
+                viewModel.getDifferentResults()
             }
             getAList.setOnClickListener {
                 viewModel.getFullArticles()

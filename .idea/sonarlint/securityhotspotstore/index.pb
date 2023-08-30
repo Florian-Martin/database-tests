@@ -1,0 +1,13 @@
+
+u
+Eapp/src/main/java/fr/florianmartin/databasetests/utils/StringUtils.kt,f\d\fdadc44991e1e9f258b295fc88c5c974f03df7bd
+ƒ
+Sapp/src/main/java/fr/florianmartin/databasetests/data/repositories/AppRepository.kt,c\e\ce0607dd1fab13fd0dc72c639531c4225123d150
+Ž
+^app/src/main/java/fr/florianmartin/databasetests/data/local/entities/ArticleWithPMandPrices.kt,a\d\adb0a4fa290e7ccf98a2bf4d1a6bab9f0a323be9
+y
+Iapp/src/main/java/fr/florianmartin/databasetests/data/local/daos/pmDAO.kt,f\e\fe9a2353d2ab1a1b0dd1be03bb1011a6bf54f171
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164

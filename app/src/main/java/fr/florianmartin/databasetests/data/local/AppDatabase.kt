@@ -11,6 +11,7 @@ import fr.florianmartin.databasetests.data.local.daos.PmDao
 import fr.florianmartin.databasetests.data.local.entities.ArticleEntity
 import fr.florianmartin.databasetests.data.local.entities.ArticlePMsCrossRef
 import fr.florianmartin.databasetests.data.local.entities.ArticlePriceEntity
+import fr.florianmartin.databasetests.data.local.entities.LinkedArticleEntity
 import fr.florianmartin.databasetests.data.local.entities.PaymentMethodEntity
 
 @Database(
@@ -18,8 +19,11 @@ import fr.florianmartin.databasetests.data.local.entities.PaymentMethodEntity
         ArticleEntity::class,
         ArticlePriceEntity::class,
         PaymentMethodEntity::class,
-        ArticlePMsCrossRef::class
-    ], version = 2
+        ArticlePMsCrossRef::class,
+        LinkedArticleEntity::class
+    ],
+    version = 5,
+    exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
 
@@ -40,7 +44,9 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "test"
                 )
-                    .fallbackToDestructiveMigration()
+                    .addMigrations(MIGRATION_2_3)
+                    .addMigrations(MIGRATION_3_4)
+                    .addMigrations(MIGRATION_4_5)
                     .build()
                 INSTANCE = instance
                 instance
